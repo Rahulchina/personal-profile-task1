@@ -1,0 +1,466 @@
+/* ===================================
+   RESPONSIVE FLEXBOX LAYOUT - STYLES
+   =================================== */
+
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* ===================================
+   NAVIGATION BAR - FLEXBOX LAYOUT
+   =================================== */
+
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.nav-container {
+    /* Enable flexbox for horizontal layout */
+    display: flex;
+    /* Align items vertically in the center */
+    align-items: center;
+    /* Space between logo and nav links */
+    justify-content: space-between;
+    /* Add padding and max width constraint */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo h1 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    /* Use flex to create horizontal navigation */
+    display: flex;
+    /* Space items evenly with gaps */
+    gap: 2rem;
+    /* Remove default list styling */
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* Mobile Navigation - Stack links vertically */
+@media (max-width: 768px) {
+    .nav-container {
+        /* Stack logo and links vertically on mobile */
+        flex-direction: column;
+        /* Center align all items */
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .nav-links {
+        /* Wrap navigation links to multiple rows if needed */
+        flex-wrap: wrap;
+        /* Center justify the wrapped items */
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 6rem 2rem;
+    /* Use flexbox for centering hero content */
+    display: flex;
+    /* Center content both horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+
+.hero-content {
+    /* Flexbox to stack content vertically */
+    display: flex;
+    /* Arrange items in column direction */
+    flex-direction: column;
+    /* Center content horizontally */
+    align-items: center;
+    /* Space between items */
+    gap: 1.5rem;
+    color: white;
+    text-align: center;
+    max-width: 600px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: white;
+    color: #667eea;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===================================
+   PROJECTS SECTION - CARD GRID
+   =================================== */
+
+.projects-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.projects-container {
+    /* Enable flexbox for card layout */
+    display: flex;
+    /* Wrap cards to next line on smaller screens */
+    flex-wrap: wrap;
+    /* Space between cards */
+    gap: 2rem;
+    /* Distribute cards evenly */
+    justify-content: center;
+}
+
+.project-card {
+    /* Flex basis to control card width */
+    flex-basis: calc(33.333% - 2rem);
+    /* Allow cards to grow/shrink */
+    flex-grow: 1;
+    /* Prevent cards from shrinking too small */
+    flex-shrink: 1;
+    /* Set minimum width for cards */
+    min-width: 300px;
+    /* Stack card content vertically */
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    /* Flex container for image sizing */
+    display: flex;
+    /* Ensure image fills the container */
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    /* Flex to arrange content with space */
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    flex-grow: 1;
+    gap: 1rem;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    color: #667eea;
+}
+
+.card-content p {
+    color: #666;
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+.card-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    margin-top: auto;
+}
+
+.card-link:hover {
+    color: #764ba2;
+}
+
+/* Tablet Screens - 2 columns */
+@media (max-width: 1024px) {
+    .project-card {
+        /* Change flex-basis to show 2 cards per row */
+        flex-basis: calc(50% - 2rem);
+    }
+}
+
+/* Mobile Screens - 1 column */
+@media (max-width: 768px) {
+    .projects-section h2 {
+        font-size: 2rem;
+    }
+
+    .project-card {
+        /* Full width on mobile */
+        flex-basis: 100%;
+    }
+}
+
+/* ===================================
+   SKILLS SECTION - SKILL CARDS
+   =================================== */
+
+.skills-section {
+    background-color: #f5f5f5;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.skills-container {
+    /* Flexbox for skill categories layout */
+    display: flex;
+    /* Wrap categories to next line */
+    flex-wrap: wrap;
+    /* Equal spacing between items */
+    gap: 2rem;
+    /* Center items horizontally */
+    justify-content: center;
+}
+
+.skill-category {
+    /* Flex basis for responsive category width */
+    flex-basis: calc(50% - 1rem);
+    /* Minimum width to prevent cards from being too small */
+    min-width: 280px;
+    /* Flex grow to fill available space */
+    flex-grow: 1;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.skill-category h3 {
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 0.5rem;
+}
+
+.skill-list {
+    /* Flexbox to arrange skills in rows */
+    display: flex;
+    /* Wrap skills to next line */
+    flex-wrap: wrap;
+    /* Gap between skill items */
+    gap: 0.8rem;
+    list-style: none;
+}
+
+.skill-item {
+    /* Flex basis for skill item sizing */
+    flex-basis: auto;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Mobile Skills - Full width categories */
+@media (max-width: 768px) {
+    .skills-section h2 {
+        font-size: 2rem;
+    }
+
+    .skill-category {
+        /* Single column on mobile */
+        flex-basis: 100%;
+    }
+}
+
+/* ===================================
+   FOOTER - FLEXBOX LAYOUT
+   =================================== */
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 3rem 2rem 1rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    /* Flexbox for footer sections */
+    display: flex;
+    /* Wrap sections on smaller screens */
+    flex-wrap: wrap;
+    /* Gap between sections */
+    gap: 2rem;
+    /* Distribute space evenly */
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #555;
+}
+
+.footer-section {
+    /* Flex basis to control section width */
+    flex-basis: auto;
+    /* Minimum width for sections */
+    min-width: 200px;
+    /* Stack content vertically */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    /* Flex for vertical list layout */
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #667eea;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Mobile Footer - Stack sections vertically */
+@media (max-width: 768px) {
+    .footer-content {
+        /* Single column layout on mobile */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-section {
+        align-items: center;
+    }
+}
+
+/* ===================================
+   RESPONSIVE BREAKPOINTS SUMMARY
+   =================================== */
+
+/* Large Screens (1024px and above)
+   - 3 project cards per row
+   - 2 skill categories per row
+   - All navigation links visible horizontally
+*/
+
+/* Tablets (768px to 1023px)
+   - 2 project cards per row
+   - 2 skill categories per row
+   - Navigation may wrap slightly
+*/
+
+/* Mobile Devices (below 768px)
+   - 1 project card per row
+   - 1 skill category per row
+   - Navigation stacks vertically
+   - Footer sections stack vertically
+   - All flex items take full width
+*/
